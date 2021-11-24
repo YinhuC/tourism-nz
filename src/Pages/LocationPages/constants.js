@@ -6,7 +6,7 @@ import image7 from '../../Images/9180-Port-Hills-Christchurch-Julian-Apse-min.jp
 
 export const locationRoutes = [
   {
-    color: 'rgb(82, 158, 203)',
+    color: 'rgb(12, 81, 112)',
     image: image1,
     path: 'Auckland',
   },
@@ -16,7 +16,7 @@ export const locationRoutes = [
     path: 'Ruapehu',
   },
   {
-    color: 'rgb(74, 128, 184)',
+    color: 'rgb(172, 162, 39)',
     image: image5,
     path: 'Marlborough',
   },

@@ -23,12 +23,13 @@ function LocationPage({ image, locationName, colour }) {
   const imageRef = useRef(null);
 
   useEffect(() => {
-    gsap.from([locationTextRef.current, '#promote-header'], {
-      delay: 1.5,
+    gsap.from(['#promote-header', locationTextRef.current], {
+      delay: 0.5,
       duration: 1,
       y: 20,
       opacity: 0,
       ease: 'power2',
+      stagger: 1,
     });
 
     gsap.from(imageRef.current, {

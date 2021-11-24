@@ -20,7 +20,7 @@ the cursor to be a direct child of cursor manager */
 
 function HeaderSection() {
   useEffect(() => {
-    gsap.from(['#promote-header', '#discover-hero', '#begin-journey-hero'], {
+    gsap.from(['#discover-hero', '#begin-journey-hero'], {
       delay: 0.8,
       duration: 1,
       y: 20,

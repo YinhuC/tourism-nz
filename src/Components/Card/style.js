@@ -16,8 +16,8 @@ export const CardImage = styled.div`
 `;
 
 export const ImageContainer = styled(Link)`
-  width: 1400px;
-  height: 55%;
+  width: 1300px;
+  height: 50%;
   position: relative;
   overflow: hidden;
   border-radius: 20px;
