@@ -16,13 +16,13 @@ export const CardImage = styled.div`
 `;
 
 export const ImageContainer = styled(Link)`
-  width: 1000px;
-  height: 50%;
+  width: 1400px;
+  height: 55%;
   position: relative;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 10px 10px 20px lightgrey;
-  margin: 0 2% 0 0;
+  margin: 0 5% 0 0;
 `;
 
 export const Overlay = styled.div`

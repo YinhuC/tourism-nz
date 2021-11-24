@@ -9,7 +9,6 @@ import {
   TopContainer,
   LocationText,
 } from './style';
-import Transition from '../../Utils/PageTransition';
 
 /* Functions */
 
@@ -19,12 +18,13 @@ function LocationPage({ image, locationName, colour }) {
     window.scrollTo(0, 0);
   });
 
+  const locationContainerRef = useRef(null);
   const locationTextRef = useRef(null);
   const imageRef = useRef(null);
 
   useEffect(() => {
-    gsap.from(locationTextRef.current, {
-      delay: 1,
+    gsap.from([locationTextRef.current, '#promote-header'], {
+      delay: 1.5,
       duration: 1,
       y: 20,
       opacity: 0,
@@ -32,21 +32,30 @@ function LocationPage({ image, locationName, colour }) {
     });
 
     gsap.from(imageRef.current, {
-      duration: 1.2,
+      delay: 0.5,
+      duration: 1.5,
       y: '-100vh',
       opacity: 0,
+      ease: 'power2',
+    });
+
+    gsap.from(locationContainerRef.current, {
+      duration: 1.5,
+      x: '-200vh',
       ease: 'power2',
     });
   });
 
   return (
     <MainContainer className='flex-column flex-md-row'>
-      <Transition colour={colour} />
       <ImageContainer
         ref={imageRef}
         style={{ backgroundImage: `url(${image})` }}
       ></ImageContainer>
-      <TopContainer style={{ backgroundColor: colour }}>
+      <TopContainer
+        ref={locationContainerRef}
+        style={{ backgroundColor: colour }}
+      >
         <LocationText ref={locationTextRef}>{locationName}</LocationText>
       </TopContainer>
     </MainContainer>

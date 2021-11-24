@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 /* Components */
-import './style.scss';
+import { TransitionContianer } from './style';
 
 /* Functions */
 
@@ -19,11 +19,10 @@ function Transition({ colour }) {
 
   return (
     <div>
-      <div
-        className='transition-effect'
+      <TransitionContianer
         style={{ backgroundColor: colour }}
         ref={transitionRef}
-      ></div>
+      ></TransitionContianer>
     </div>
   );
 }

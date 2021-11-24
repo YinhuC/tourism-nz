@@ -1,27 +1,14 @@
-import image1 from '../../Images/U087-Devonport-Auckland-Tourism-New-Zealand-min.jpg';
-import image2 from '../../Images/Optimized-Lake-Rotorua-Julian-Apse-min.jpg';
-import image3 from '../../Images/Optimized-L351-Lake-Taupo-Lake-Taupo-Destination-Lake-Taupo-min.jpg';
-import image4 from '../../Images/Optimized-L344-Mount-Ruapehu-Ruapehu-Penny-Egleton-min.jpg';
-import image5 from '../../Images/Optimized-AS39-Marlborough-Sounds-Marlborough-Rob-Suisted-min.jpg';
-import image6 from '../../Images/Optimized-0864-Glenorchy-Queenstown-Miles-Holden-min.jpg';
-import image7 from '../../Images/Optimized-9180-Port-Hills-Christchurch-Julian-Apse-min.jpg';
-import image8 from '../../Images/Optimized-L137-Rippon-Vineyard-Lake-Wanaka-David-Wall-min.jpg';
+import image1 from '../../Images/55-Auckland-Harbour-AWADS-min.jpg';
+import image4 from '../../Images/L344-Mount-Ruapehu-Ruapehu-Penny-Egleton-min.jpg';
+import image5 from '../../Images/154-Marlborough-sounds-min.jpg';
+import image6 from '../../Images/0864-Glenorchy-Queenstown-Miles-Holden-min.jpg';
+import image7 from '../../Images/9180-Port-Hills-Christchurch-Julian-Apse-min.jpg';
 
 export const locationRoutes = [
   {
     color: 'rgb(82, 158, 203)',
     image: image1,
     path: 'Auckland',
-  },
-  {
-    color: 'rgb(109, 116, 135)',
-    image: image2,
-    path: 'Rotorua',
-  },
-  {
-    color: 'rgb(99, 127, 145)',
-    image: image3,
-    path: 'Taupo',
   },
   {
     color: 'rgb(85, 114, 153)',
@@ -43,9 +30,22 @@ export const locationRoutes = [
     image: image7,
     path: 'Christchurch',
   },
-  {
-    color: 'rgb(106, 50, 32)',
-    image: image8,
-    path: 'Wanaka',
-  },
 ];
+
+export const location = [
+  'Auckland',
+  'Ruapehu',
+  'Marlborough',
+  'Queenstown',
+  'Christchurch',
+];
+
+export const info = [
+  'By Auckland Whale & Dolphin Safari',
+  'By Penny Egleton',
+  'By MarlboroughNZ',
+  'By Miles Holden',
+  'By Julian Apse',
+];
+
+export const arrayImages = [image1, image4, image5, image6, image7];

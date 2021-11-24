@@ -1,5 +1,5 @@
 /* Third Party */
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Row, Col, Container, Fade } from 'reactstrap';
 
 /* Components */
@@ -7,89 +7,79 @@ import { Center, TourismText, MenuButton } from './style';
 import { MenuIcon } from '../Icons/Menu';
 import DropdownMenu from '../DropdownMenu';
 import './style.scss';
+import CursorContext from '../Cursor/Context/CursorContext';
 
 /* Functions */
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      scrollUp: true,
-      prevScroll: 0,
-      color: 'white',
-      isMenuOpen: false,
+function Header() {
+  const [scrollUp, setScrollUp] = useState(true);
+  const [prevScroll, setPrevScroll] = useState(0);
+  const [color, setColor] = useState('white');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { setType } = useContext(CursorContext);
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll);
+
+    return function cleanup() {
+      document.removeEventListener('scroll', handleScroll);
     };
-  }
-
-  componentDidMount() {
-    document.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.handleScroll);
-  }
+  });
 
   // Handle scroll event to hide or show header
-  handleScroll = () => {
+  const handleScroll = () => {
     const menuOpen = document.getElementById('dropdown').style.height === '50%';
-    const scrollingUp =
-      window.scrollY > this.state.prevScroll && !menuOpen ? false : true;
-    const setColor =
+    const scrollingUp = window.scrollY > prevScroll && !menuOpen ? false : true;
+    const getColor =
       window.scrollY > window.innerHeight - 80 && !menuOpen ? 'black' : 'white';
-    this.setState({
-      scrollUp: scrollingUp,
-      prevScroll: window.scrollY,
-      color: setColor,
-    });
+
+    setScrollUp(scrollingUp);
+    setPrevScroll(window.scrollY);
+    setColor(getColor);
   };
 
   // Update the state when the menu is clicked
-  handleMenuClick = () => {
-    if (this.state.isMenuOpen === true) {
+  const handleMenuClick = () => {
+    if (isMenuOpen === true) {
       document.activeElement.blur();
     } else {
-      this.setState({
-        color: 'white',
-      });
+      setColor('white');
     }
-    this.setState({
-      isMenuOpen: !this.state.isMenuOpen,
-    });
+    setIsMenuOpen(!isMenuOpen);
   };
 
-  render() {
-    return (
-      <>
-        <DropdownMenu menuHeight={this.state.isMenuOpen ? '50' : '0'} />
-        <Fade in={this.state.scrollUp}>
-          <Center>
-            <Container id='promote-header'>
-              <Row className='d-flex justify-content-center mt-5'>
-                <Col className='col-11 d-none d-md-flex justify-content-start mt-3'>
-                  <TourismText style={{ color: this.state.color }}>
-                    Promote Tourism NZ
-                  </TourismText>
-                </Col>
-                <Col className='col-1 d-flex justify-content-center mt-3'>
-                  <MenuButton
-                    id='menuButton'
-                    className={
-                      this.state.isMenuOpen
-                        ? 'Menu-toggle-open'
-                        : 'Menu-toggle-closed'
-                    }
-                    onClick={this.handleMenuClick}
-                  >
-                    <MenuIcon color={this.state.color} />
-                  </MenuButton>
-                </Col>
-              </Row>
-            </Container>
-          </Center>
-        </Fade>
-      </>
-    );
-  }
+  return (
+    <>
+      <DropdownMenu menuHeight={isMenuOpen ? '50' : '0'} />
+      <Fade in={scrollUp}>
+        <Center>
+          <Container id='promote-header'>
+            <Row className='d-flex justify-content-center mt-5'>
+              <Col className='col-11 d-none d-md-flex justify-content-start mt-3'>
+                <TourismText
+                  onMouseEnter={() => setType('expand')}
+                  onMouseLeave={() => setType('default')}
+                  to='/'
+                >
+                  <h4 style={{ color: color }}>Promote Tourism NZ</h4>
+                </TourismText>
+              </Col>
+              <Col className='col-1 d-flex justify-content-center mt-3'>
+                <MenuButton
+                  className={
+                    isMenuOpen ? 'Menu-toggle-open' : 'Menu-toggle-closed'
+                  }
+                  onClick={handleMenuClick}
+                >
+                  <MenuIcon color={color} />
+                </MenuButton>
+              </Col>
+            </Row>
+          </Container>
+        </Center>
+      </Fade>
+    </>
+  );
 }
 
 export default Header;

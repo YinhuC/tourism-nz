@@ -14,7 +14,7 @@ import {
   VerticalContainer,
 } from './style';
 import CustomCard from '../../../Components/Card';
-import { location, info, arrayImages } from './constants';
+import { location, info, arrayImages } from '../../LocationPages/constants';
 
 /* Functions */
 
@@ -47,7 +47,7 @@ export default function SlideSection() {
         header={location[i]}
         subheader={info[i]}
         key={`card-${i}`}
-        url={'/location/' + info[i].replace(/\s+/g, '-').toLowerCase()}
+        url={'/location/' + location[i].replace(/\s+/g, '-').toLowerCase()}
       />
     ))
   );

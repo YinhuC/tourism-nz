@@ -31,9 +31,10 @@ function App() {
   return (
     <CursorManager>
       <Cursor />
-      <Header />
 
       <Router>
+        <Header />
+
         <Switch>
           {routes.map(({ path, Component }) => (
             <Route key={path} exact path={path}>

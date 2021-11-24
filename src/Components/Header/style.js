@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Center = styled.div`
   width: 100vw;
@@ -13,18 +14,21 @@ export const Center = styled.div`
   position: fixed;
 `;
 
-export const TourismText = styled.h4`
+export const TourismText = styled(Link)`
   display: flex;
   align-items: center;
-  color: white;
-  margin: 0 10px 0 0;
-  user-select: none;
+  text-decoration: none !important;
+
+  .h4 {
+    color: white;
+    margin: 0 10px 0 0;
+    user-select: none;
+  }
 `;
 
 export const MenuButton = styled.button`
   background-color: transparent;
   border: 0;
-  cursor: pointer;
 
   .menu {
     display: flex;
