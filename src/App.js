@@ -1,11 +1,12 @@
 /* Third Party */
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
 } from 'react-router-dom';
+import { gsap } from 'gsap';
 
 /* Components */
 import MarketingPage from './Pages/MarketingPage';
@@ -28,11 +29,21 @@ const routes = [
 /* Functions */
 
 function App() {
+  useEffect(() => {
+    gsap.from('#promote-header', {
+      delay: 0.5,
+      duration: 1,
+      y: 20,
+      opacity: 0,
+      ease: 'power2',
+    });
+  });
+
   return (
     <CursorManager>
       <Cursor />
 
-      <Router>
+      <Router forceRefresh={true}>
         <Header />
 
         <Switch>

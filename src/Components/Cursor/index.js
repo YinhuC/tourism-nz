@@ -36,14 +36,15 @@ export const Cursor = () => {
 
     const mouseX = clientX;
     const mouseY = clientY;
-
-    positionRef.current.mouseX =
-      mouseX - secondaryCursor.current.clientWidth / 2;
-    positionRef.current.mouseY =
-      mouseY - secondaryCursor.current.clientHeight / 2;
-    mainCursor.current.style.transform = `translate3d(${
-      mouseX - mainCursor.current.clientWidth / 2
-    }px, ${mouseY - mainCursor.current.clientHeight / 2}px, 0)`;
+    if (secondaryCursor.current !== null) {
+      positionRef.current.mouseX =
+        mouseX - secondaryCursor.current.clientWidth / 2;
+      positionRef.current.mouseY =
+        mouseY - secondaryCursor.current.clientHeight / 2;
+      mainCursor.current.style.transform = `translate3d(${
+        mouseX - mainCursor.current.clientWidth / 2
+      }px, ${mouseY - mainCursor.current.clientHeight / 2}px, 0)`;
+    }
   };
 
   useEffect(() => {
@@ -83,7 +84,8 @@ export const Cursor = () => {
           positionRef.current.destinationY += distanceY;
         }
       }
-      secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+      if (secondaryCursor.current !== null)
+        secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
     };
     followMouse();
 
