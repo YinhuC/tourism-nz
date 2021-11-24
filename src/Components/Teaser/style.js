@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Card, CardImg } from 'shards-react';
+import { Card, CardImg, CardHeader, CardFooter } from 'shards-react';
 
 export const Teaser = styled(Card)`
   height: 100%;
@@ -13,5 +13,13 @@ export const TextBody = styled.div`
 `;
 
 export const CustomCardImg = styled(CardImg)`
+  width: 100%;
+`;
+
+export const CustomCardHeader = styled(CardHeader)`
+  width: 100%;
+`;
+
+export const CustomCardFooter = styled(CardFooter)`
   width: 100%;
 `;

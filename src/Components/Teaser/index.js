@@ -1,17 +1,17 @@
 /* Third Party */
 import React, { useContext, useState } from 'react';
-import {
-  CardHeader,
-  CardTitle,
-  CardBody,
-  CardFooter,
-  Button,
-} from 'shards-react';
-import { Teaser, TextBody, CustomCardImg } from './style';
+import { CardTitle, CardBody, Button } from 'shards-react';
 import CursorContext from '../Cursor/Context/CursorContext';
 import { gsap } from 'gsap';
 
 /* Components */
+import {
+  Teaser,
+  TextBody,
+  CustomCardImg,
+  CustomCardFooter,
+  CustomCardHeader,
+} from './style';
 import {
   expandedLeft,
   expandedMiddle,
@@ -49,7 +49,7 @@ function CustomTeaser({ image, header, title, text, footer, url, imageId }) {
 
   return (
     <Teaser>
-      <CardHeader>{header}</CardHeader>
+      <CustomCardHeader>{header}</CustomCardHeader>
       <CustomCardImg
         onMouseEnter={() => setType('expand')}
         onMouseLeave={() => setType('default')}
@@ -70,7 +70,7 @@ function CustomTeaser({ image, header, title, text, footer, url, imageId }) {
           Read more &rarr;
         </Button>
       </CardBody>
-      <CardFooter>{footer}</CardFooter>
+      <CustomCardFooter>{footer}</CustomCardFooter>
     </Teaser>
   );
 }
