@@ -7,7 +7,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 
 /* Components */
-import { TeaserContainer, BumperSection } from './style';
+import { TeaserContainer, BumperSection, BumperText } from './style';
 
 /* Functions */
 
@@ -54,7 +54,7 @@ function RegionSection() {
   return (
     <section>
       <BumperSection>
-        <h2 ref={bottomSlideBumper}>Plan Your Journey</h2>
+        <BumperText ref={bottomSlideBumper}>Plan Your Journey</BumperText>
       </BumperSection>
       <TeaserContainer>
         <Row>

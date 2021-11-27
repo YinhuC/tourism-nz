@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/all';
 import SplitText from '../../../Utils/Split3.min.js';
 
 /* Components */
-import { CovidContainer, DisclaimerText } from './style';
+import { CovidContainer, DisclaimerText, CovidHeader } from './style';
 
 /* Functions */
 /* need to actually wrap the icon AND cursor for it to change, also need 
@@ -39,10 +39,12 @@ function CovidSection() {
       <Container>
         <Row className='d-flex flex-column'>
           <Col id='covid-title' className='text-center'>
-            <h2 style={{ userSelect: 'none' }}>Before You Go</h2>
+            <CovidHeader style={{ userSelect: 'none' }}>
+              Before You Go
+            </CovidHeader>
             <Alert
               theme='warning'
-              style={{ color: 'black', fontWeight: 'bold', marginTop: '50px' }}
+              style={{ color: 'black', fontWeight: 'bold', marginTop: '30px' }}
             >
               Alert - Warning
             </Alert>

@@ -18,10 +18,24 @@ function Loader() {
   });
 
   return (
-    <LoaderContainer>
-      <LoaderTitle>Promote Tourism New Zealand</LoaderTitle>
-      <LoaderSubtitle>Travel - Explore - Experience</LoaderSubtitle>
-    </LoaderContainer>
+    <>
+      <LoaderContainer className='d-none d-md-flex'>
+        <LoaderTitle>Promote Tourism New Zealand</LoaderTitle>
+        <LoaderSubtitle>Travel . Explore . Experience</LoaderSubtitle>
+      </LoaderContainer>
+
+      <LoaderContainer className='d-flex d-md-none'>
+        <LoaderTitle>Promote</LoaderTitle>
+        <LoaderTitle>Tourism</LoaderTitle>
+        <LoaderTitle>New Zealand</LoaderTitle>
+        <hr />
+        <LoaderSubtitle>Travel</LoaderSubtitle>
+        <LoaderSubtitle>-</LoaderSubtitle>
+        <LoaderSubtitle>Explore</LoaderSubtitle>
+        <LoaderSubtitle>-</LoaderSubtitle>
+        <LoaderSubtitle>Experience</LoaderSubtitle>
+      </LoaderContainer>
+    </>
   );
 }
 

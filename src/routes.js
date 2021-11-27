@@ -1,11 +1,6 @@
 /* Third Party */
 import React, { useEffect, useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 /* Components */
@@ -16,6 +11,7 @@ import Error from './Pages/ErrorPage';
 import LocationComponent from './Components/LocationSection';
 import { locationRoutes } from './Pages/LocationPages/constants';
 import Loader from './Components/Loader';
+import useScrollMemory from './Utils/useScrollMemory';
 
 const routes = [
   {
@@ -27,6 +23,8 @@ const routes = [
 
 export function Routing() {
   const [loader, setLoader] = useState(true);
+  const scrollData = {};
+  useScrollMemory(scrollData);
 
   useEffect(() => {
     setLoader(true);
@@ -46,7 +44,7 @@ export function Routing() {
   });
 
   return (
-    <Router>
+    <>
       <Header />
 
       <Switch>
@@ -73,6 +71,6 @@ export function Routing() {
       </Switch>
 
       <Footer />
-    </Router>
+    </>
   );
 }

@@ -10,6 +10,7 @@ export const CovidContainer = styled.section`
 `;
 
 export const DisclaimerText = styled.p`
+  font-family: 'Inter', sans-serif;
   font-size: 1.7rem;
   line-height: 2.2rem;
   color: black;
@@ -17,4 +18,13 @@ export const DisclaimerText = styled.p`
   text-align: center;
   user-select: none;
   margin: 0 0 30px 0;
+`;
+
+export const CovidHeader = styled.div`
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: black;
+  line-height: 2.8rem;
 `;

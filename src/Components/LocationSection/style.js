@@ -31,6 +31,6 @@ export const TopContainer = styled.div`
 export const LocationText = styled.div`
   text-transform: uppercase;
   font-size: calc(12px + 3vw);
-  font-family: 'Krona One';
+  font-family: 'Playfair Display', serif;
   color: white;
 `;

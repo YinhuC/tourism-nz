@@ -40,12 +40,19 @@ export const TopContainer = styled.div`
 `;
 
 export const Header = styled.h2`
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+
   display: flex;
   justify-content: flex-end;
   text-align: end;
 `;
 
 export const Subheader = styled.h4`
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 30px;
+
   display: flex;
   justify-content: flex-end;
 `;

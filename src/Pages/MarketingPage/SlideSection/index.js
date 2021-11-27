@@ -12,6 +12,7 @@ import {
   HorizontalSection,
   Main,
   VerticalContainer,
+  BumperText,
 } from './style';
 import CustomCard from '../../../Components/Card';
 import { location, info, arrayImages } from '../../LocationPages/constants';
@@ -57,7 +58,9 @@ export default function SlideSection() {
       <GlobalStyle />
       <Main>
         <BumperSection>
-          <h2 ref={topSlideBumper}>Start Exploring Wherever You Want</h2>
+          <BumperText ref={topSlideBumper}>
+            Start Exploring Wherever You Want
+          </BumperText>
         </BumperSection>
         <HorizontalSection className='d-none d-md-flex'>
           <HorizontalScroll>

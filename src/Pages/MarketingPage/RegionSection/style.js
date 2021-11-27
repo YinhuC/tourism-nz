@@ -11,3 +11,10 @@ export const BumperSection = styled.section`
   background-color: rgb(171, 213, 255);
   user-select: none;
 `;
+
+export const BumperText = styled.div`
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: black;
+`;

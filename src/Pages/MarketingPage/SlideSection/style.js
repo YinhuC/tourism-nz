@@ -49,3 +49,10 @@ export const VerticalContainer = styled.div`
     padding: 0 5% 0 5%;
   }
 `;
+
+export const BumperText = styled.div`
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: black;
+`;

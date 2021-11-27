@@ -14,16 +14,21 @@ export const Center = styled.div`
   position: fixed;
 `;
 
-export const TourismText = styled(Link)`
+export const TourismTextContainer = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none !important;
+`;
 
-  .h4 {
-    color: white;
-    margin: 0 10px 0 0;
-    user-select: none;
-  }
+export const TourismText = styled.div`
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+
+  margin: 0 10px 0 0;
+  user-select: none;
 `;
 
 export const MenuButton = styled.button`

@@ -1,5 +1,6 @@
 /* Third Party */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 /* Components */
 import CursorManager from './Components/Cursor/Context/manager.tsx';
@@ -12,7 +13,9 @@ function App() {
   return (
     <CursorManager>
       <Cursor />
-      <Routing />
+      <Router>
+        <Routing />
+      </Router>
     </CursorManager>
   );
 }

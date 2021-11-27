@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Row, Col, Container, Fade } from 'reactstrap';
 
 /* Components */
-import { Center, TourismText, MenuButton } from './style';
+import { Center, TourismTextContainer, MenuButton, TourismText } from './style';
 import { MenuIcon } from '../Icons/Menu';
 import DropdownMenu from '../DropdownMenu';
 import './style.scss';
@@ -49,20 +49,22 @@ function Header() {
   };
 
   return (
-    <>
+    <section>
       <DropdownMenu menuHeight={isMenuOpen ? '50' : '0'} />
       <Fade in={scrollUp}>
         <Center>
           <Container id='promote-header'>
             <Row className='d-flex justify-content-center mt-5'>
               <Col className='col-11 d-none d-md-flex justify-content-start mt-3'>
-                <TourismText
+                <TourismTextContainer
                   onMouseEnter={() => setType('expand')}
                   onMouseLeave={() => setType('default')}
                   to='/'
                 >
-                  <h4 style={{ color: color }}>Promote Tourism NZ</h4>
-                </TourismText>
+                  <TourismText style={{ color: color }}>
+                    Promote Tourism NZ
+                  </TourismText>
+                </TourismTextContainer>
               </Col>
               <Col className='col-1 d-flex justify-content-center mt-3'>
                 <MenuButton
@@ -78,7 +80,7 @@ function Header() {
           </Container>
         </Center>
       </Fade>
-    </>
+    </section>
   );
 }
 

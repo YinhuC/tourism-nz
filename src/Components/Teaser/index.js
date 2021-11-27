@@ -1,6 +1,6 @@
 /* Third Party */
 import React, { useContext, useState } from 'react';
-import { CardTitle, CardBody, Button } from 'shards-react';
+import { CardBody, Button } from 'shards-react';
 import CursorContext from '../Cursor/Context/CursorContext';
 import { gsap } from 'gsap';
 
@@ -11,6 +11,7 @@ import {
   CustomCardImg,
   CustomCardFooter,
   CustomCardHeader,
+  CustomCardTitle,
 } from './style';
 import {
   expandedLeft,
@@ -58,7 +59,7 @@ function CustomTeaser({ image, header, title, text, footer, url, imageId }) {
         src={image}
       />
       <CardBody className='d-flex flex-column'>
-        <CardTitle>{title}</CardTitle>
+        <CustomCardTitle>{title}</CustomCardTitle>
         <TextBody>{text}</TextBody>
         <Button
           onMouseEnter={() => setType('expand')}

@@ -13,11 +13,6 @@ import {
 /* Functions */
 
 function LocationPage({ image, locationName, colour }) {
-  // So page doesn't load halfway down the page
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
   const locationContainerRef = useRef(null);
   const locationTextRef = useRef(null);
   const imageRef = useRef(null);

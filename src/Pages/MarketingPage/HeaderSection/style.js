@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Container } from "reactstrap";
+import styled from 'styled-components';
+import { Container } from 'reactstrap';
 
 export const BackgroundVideo = styled.video`
   position: absolute;
@@ -29,16 +29,23 @@ export const VideoContainer = styled.div`
 `;
 
 export const BackgroundContainer = styled.div`
+  background-color: black;
+
   /* Full height */
   height: 100vh;
   width: 100%;
 `;
 
-export const HeaderContainer = styled.h1`
-  user-select: none;
+export const HeaderContainer = styled.div`
   width: 100%;
-  color: white;
   height: 150px;
+  margin: 0 0 60px 0;
+
+  user-select: none;
+  color: white;
+  font-size: 4rem;
+  line-height: 60px;
+  font-family: 'Playfair Display', serif;
 `;
 
 export const MainContainer = styled(Container)`

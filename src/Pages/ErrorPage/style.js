@@ -9,4 +9,5 @@ export const BumperSection = styled.section`
 
 export const ErrorText = styled.h1`
   color: #e8e8e8;
+  font-family: 'Inter', sans-serif;
 `;
