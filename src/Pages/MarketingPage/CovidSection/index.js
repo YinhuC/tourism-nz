@@ -22,6 +22,7 @@ function CovidSection() {
     });
 
     gsap.from(['#covid-title', split.lines, '#covid-button'], {
+      delay: 0.3,
       duration: 1,
       y: 20,
       opacity: 0,

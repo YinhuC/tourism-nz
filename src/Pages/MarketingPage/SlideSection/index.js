@@ -28,7 +28,7 @@ export default function SlideSection() {
 
   useEffect(() => {
     gsap.from(topSlideBumper.current, {
-      delay: 0.1,
+      delay: 0.5,
       duration: 1,
       y: 20,
       opacity: 0,

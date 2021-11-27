@@ -18,7 +18,7 @@ function RegionSection() {
 
   useEffect(() => {
     gsap.from(bottomSlideBumper.current, {
-      delay: 0.1,
+      delay: 0.5,
       duration: 1,
       y: 20,
       opacity: 0,
