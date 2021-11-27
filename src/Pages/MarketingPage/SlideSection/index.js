@@ -53,7 +53,7 @@ export default function SlideSection() {
   );
 
   return (
-    <div>
+    <section>
       <GlobalStyle />
       <Main>
         <BumperSection>
@@ -75,6 +75,6 @@ export default function SlideSection() {
           </VerticalContainer>
         </HorizontalSection>
       </Main>
-    </div>
+    </section>
   );
 }

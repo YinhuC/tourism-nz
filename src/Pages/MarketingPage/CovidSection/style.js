@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CovidContainer = styled.div`
+export const CovidContainer = styled.section`
   padding: 200px 10px 0 10px;
   display: flex;
   align-items: center;

@@ -1,5 +1,5 @@
 /* Third Party */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,6 +15,7 @@ import Footer from './Components/Footer';
 import Error from './Pages/ErrorPage';
 import LocationComponent from './Components/LocationSection';
 import { locationRoutes } from './Pages/LocationPages/constants';
+import Loader from './Components/Loader';
 
 const routes = [
   {
@@ -25,6 +26,15 @@ const routes = [
 ];
 
 export function Routing() {
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    setLoader(true);
+    setTimeout(() => {
+      setLoader(false);
+    }, 3000);
+  }, []);
+
   useEffect(() => {
     gsap.from('#promote-header', {
       delay: 0.5,
@@ -36,17 +46,13 @@ export function Routing() {
   });
 
   return (
-    <Router forceRefresh={true}>
+    <Router>
       <Header />
 
       <Switch>
-        {routes.map(({ path, Component }) => (
-          <Route key={path} exact path={path}>
-            <div>
-              <Component />
-            </div>
-          </Route>
-        ))}
+        <Route key={routes[0].path} exact path={routes[0].path}>
+          {loader ? <Loader /> : <MarketingPage />}
+        </Route>
 
         {locationRoutes.map((route, index) => (
           <Route

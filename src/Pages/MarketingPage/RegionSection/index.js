@@ -52,7 +52,7 @@ function RegionSection() {
   );
 
   return (
-    <>
+    <section>
       <BumperSection>
         <h2 ref={bottomSlideBumper}>Plan Your Journey</h2>
       </BumperSection>
@@ -61,7 +61,7 @@ function RegionSection() {
           <Teasers />
         </Row>
       </TeaserContainer>
-    </>
+    </section>
   );
 }
 

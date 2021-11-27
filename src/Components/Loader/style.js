@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Progress } from 'shards-react';
 
 export const LoaderContainer = styled.div`
   position: absolute;
@@ -10,6 +9,7 @@ export const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   width: 100vw;
   height: 100vh;
@@ -17,6 +17,10 @@ export const LoaderContainer = styled.div`
   background-color: black;
 `;
 
-export const CustomProgress = styled(Progress)`
-  width: 50vw;
+export const LoaderTitle = styled.h1`
+  color: white;
+`;
+
+export const LoaderSubtitle = styled.h2`
+  color: wheat;
 `;
