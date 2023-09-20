@@ -1,6 +1,6 @@
 /* Third Party */
-import React, { useContext } from 'react';
-import CursorContext from '../../Cursor/Context/CursorContext';
+import React, { useContext } from "react";
+import { CursorContext } from "../../Cursor/Context/CursorContext";
 
 /* Components */
 
@@ -11,9 +11,9 @@ export const MenuIcon = ({ color }) => {
 
   return (
     <div
-      onMouseEnter={() => setType('expand')}
-      onMouseLeave={() => setType('default')}
-      className='menu'
+      onMouseEnter={() => setType("expand")}
+      onMouseLeave={() => setType("default")}
+      className="menu"
     >
       <span style={{ background: color }}></span>
       <span style={{ background: color }}></span>

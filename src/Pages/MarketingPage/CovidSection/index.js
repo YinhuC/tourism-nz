@@ -1,13 +1,12 @@
 /* Third Party */
-import React, { useEffect } from 'react';
-import { Row, Col, Container } from 'reactstrap';
-import { Button, Alert } from 'shards-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import SplitText from '../../../Utils/Split3.min.js';
+import React, { useEffect } from "react";
+import { Row, Col, Container, Button, Alert } from "reactstrap";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import SplitText from "../../../Utils/Split3.min.js";
 
 /* Components */
-import { CovidContainer, DisclaimerText, CovidHeader } from './style';
+import { CovidContainer, DisclaimerText, CovidHeader } from "./style";
 
 /* Functions */
 /* need to actually wrap the icon AND cursor for it to change, also need 
@@ -17,41 +16,41 @@ function CovidSection() {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const split = new SplitText('#disclaimer', {
-      type: 'lines',
+    const split = new SplitText("#disclaimer", {
+      type: "lines",
     });
 
-    gsap.from(['#covid-title', split.lines, '#covid-button'], {
+    gsap.from(["#covid-title", split.lines, "#covid-button"], {
       delay: 0.3,
       duration: 1,
       y: 20,
       opacity: 0,
       stagger: 0.1,
-      ease: 'power2',
+      ease: "power2",
 
       scrollTrigger: {
-        trigger: '#disclaimer',
+        trigger: "#disclaimer",
       },
     });
   });
 
   return (
-    <CovidContainer className='covid'>
+    <CovidContainer className="covid">
       <Container>
-        <Row className='d-flex flex-column'>
-          <Col id='covid-title' className='text-center'>
-            <CovidHeader style={{ userSelect: 'none' }}>
+        <Row className="d-flex flex-column">
+          <Col id="covid-title" className="text-center">
+            <CovidHeader style={{ userSelect: "none" }}>
               Before You Go
             </CovidHeader>
             <Alert
-              theme='warning'
-              style={{ color: 'black', fontWeight: 'bold', marginTop: '30px' }}
+              theme="warning"
+              style={{ color: "black", fontWeight: "bold", marginTop: "30px" }}
             >
               Alert - Warning
             </Alert>
           </Col>
-          <Col className='d-flex justify-content-center'>
-            <DisclaimerText id='disclaimer'>
+          <Col className="d-flex justify-content-center">
+            <DisclaimerText id="disclaimer">
               The pandemic has caused many lockdowns with the country too afraid
               to explore again. There are businesses that will benefit from more
               tourism, plus you deserve to relax and travel. However, safety
@@ -60,17 +59,17 @@ function CovidSection() {
               stop the spread:
             </DisclaimerText>
           </Col>
-          <Col className='d-flex justify-content-center'>
+          <Col className="d-flex justify-content-center">
             <Button
-              id='covid-button'
-              href='https://covid19.govt.nz/'
-              target='_blank'
-              size='lg'
-              theme='warning'
+              id="covid-button"
+              href="https://covid19.govt.nz/"
+              target="_blank"
+              size="lg"
+              theme="warning"
               style={{
-                fontWeight: 'bold',
-                boxShadow: '2px 2px 10px gray',
-                margin: '0 0 250px 0',
+                fontWeight: "bold",
+                boxShadow: "2px 2px 10px gray",
+                margin: "0 0 250px 0",
               }}
             >
               Click Here

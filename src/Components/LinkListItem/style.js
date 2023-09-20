@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ListGroupItem } from "shards-react";
+import { ListGroupItem } from "reactstrap";
 
 export const Link = styled.a`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,

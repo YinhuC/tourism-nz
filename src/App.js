@@ -1,11 +1,11 @@
 /* Third Party */
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 /* Components */
-import CursorManager from './Components/Cursor/Context/manager.tsx';
-import { Cursor } from './Components/Cursor';
-import { Routing } from './routes';
+import CursorManager from "./Components/Cursor/Context/manager";
+import { Cursor } from "./Components/Cursor";
+import { Routing } from "./routes";
 
 /* Functions */
 

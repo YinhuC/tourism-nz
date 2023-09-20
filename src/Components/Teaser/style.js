@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import { Card, CardImg, CardHeader, CardFooter, CardTitle } from 'shards-react';
+import styled from "styled-components";
+import { Card, CardImg, CardHeader, CardFooter, CardTitle } from "reactstrap";
 
 export const Teaser = styled(Card)`
   height: 100%;
 
   display: flex;
   align-items: flex-start;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 `;
 
 export const TextBody = styled.div`
@@ -28,7 +28,7 @@ export const CustomCardFooter = styled(CardFooter)`
 
 export const CustomCardTitle = styled(CardTitle)`
   width: 100%;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 30px;
   margin: 0 0 20px 0;
 `;

@@ -1,6 +1,6 @@
 /* Third Party */
-import React, { useContext } from 'react';
-import { Col, Row } from 'reactstrap';
+import React, { useContext } from "react";
+import { Col, Row } from "reactstrap";
 
 /* Components */
 import {
@@ -10,8 +10,8 @@ import {
   TopContainer,
   Header,
   Subheader,
-} from './style';
-import CursorContext from '../Cursor/Context/CursorContext';
+} from "./style";
+import { CursorContext } from "../Cursor/Context/CursorContext";
 
 /* Functions */
 
@@ -20,19 +20,19 @@ function CustomCard({ image, header, subheader, url }) {
 
   return (
     <ImageContainer
-      className='image-container'
-      onMouseEnter={() => setType('expand')}
-      onMouseLeave={() => setType('default')}
-      onClick={() => setType('default')}
+      className="image-container"
+      onMouseEnter={() => setType("expand")}
+      onMouseLeave={() => setType("default")}
+      onClick={() => setType("default")}
       to={url}
     >
       <Overlay>
         <TopContainer>
-          <Row className='d-flex flex-column'>
+          <Row className="d-flex flex-column">
             <Col>
               <Header> {header}</Header>
             </Col>
-            <Col className='d-flex justify-content-end'>
+            <Col className="d-flex justify-content-end">
               <Subheader>{subheader}</Subheader>
             </Col>
           </Row>

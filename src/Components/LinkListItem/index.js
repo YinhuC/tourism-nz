@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 
 /* Components */
 import { ListItem, Link } from "./style";
-import CursorContext from "../Cursor/Context/CursorContext";
+import { CursorContext } from "../Cursor/Context/CursorContext";
 
 /* Functions */
 

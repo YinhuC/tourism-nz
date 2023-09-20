@@ -1,30 +1,19 @@
 /* Third Party */
-import React, { useEffect, useState } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { gsap } from 'gsap';
+import React, { useEffect, useState } from "react";
+import { Route, Routes, Outlet } from "react-router-dom";
+import { gsap } from "gsap";
 
 /* Components */
-import MarketingPage from './Pages/MarketingPage';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import Error from './Pages/ErrorPage';
-import LocationComponent from './Components/LocationSection';
-import { locationRoutes } from './Pages/LocationPages/constants';
-import Loader from './Components/Loader';
-import useScrollMemory from './Utils/useScrollMemory';
-
-const routes = [
-  {
-    path: '/',
-    name: 'MarketingPage',
-    Component: MarketingPage,
-  },
-];
+import MarketingPage from "./Pages/MarketingPage";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Error from "./Pages/ErrorPage";
+import LocationComponent from "./Components/LocationSection";
+import { locationRoutes } from "./Pages/LocationPages/constants";
+import Loader from "./Components/Loader";
 
 export function Routing() {
   const [loader, setLoader] = useState(true);
-  const scrollData = {};
-  useScrollMemory(scrollData);
 
   useEffect(() => {
     setLoader(true);
@@ -34,12 +23,12 @@ export function Routing() {
   }, []);
 
   useEffect(() => {
-    gsap.from('#promote-header', {
+    gsap.from("#promote-header", {
       delay: 0.5,
       duration: 1,
       y: 20,
       opacity: 0,
-      ease: 'power2',
+      ease: "power2",
     });
   });
 
@@ -47,28 +36,37 @@ export function Routing() {
     <>
       <Header />
 
-      <Switch>
-        <Route key={routes[0].path} exact path={routes[0].path}>
-          {loader ? <Loader /> : <MarketingPage />}
-        </Route>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            loader ? (
+              <Loader />
+            ) : (
+              <>
+                <MarketingPage />
+                <Outlet />
+              </>
+            )
+          }
+        />
 
         {locationRoutes.map((route, index) => (
           <Route
             key={`location-page-${index}`}
-            path={'/location/' + route.path}
-            exact={route.exact}
-          >
-            <LocationComponent
-              image={route.image}
-              locationName={route.path}
-              colour={route.color}
-            />
-          </Route>
+            path={`/location/${route.path}`}
+            element={
+              <LocationComponent
+                image={route.image}
+                locationName={route.path}
+                colour={route.color}
+              />
+            }
+          />
         ))}
 
-        <Route path='/404' component={Error} />
-        <Redirect to='/404' />
-      </Switch>
+        <Route path="*" element={<Error />} />
+      </Routes>
 
       <Footer />
     </>

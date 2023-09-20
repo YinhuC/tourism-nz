@@ -1,8 +1,8 @@
 /* Third Party */
-import React, { useContext, useState } from 'react';
-import { CardBody, Button } from 'shards-react';
-import CursorContext from '../Cursor/Context/CursorContext';
-import { gsap } from 'gsap';
+import React, { useContext, useState } from "react";
+import { CardBody, Button } from "reactstrap";
+import { CursorContext } from "../Cursor/Context/CursorContext";
+import { gsap } from "gsap";
 
 /* Components */
 import {
@@ -12,13 +12,13 @@ import {
   CustomCardFooter,
   CustomCardHeader,
   CustomCardTitle,
-} from './style';
+} from "./style";
 import {
   expandedLeft,
   expandedMiddle,
   expandedRight,
   shrunk,
-} from './constants';
+} from "./constants";
 
 /* Functions */
 
@@ -26,7 +26,7 @@ function CustomTeaser({ image, header, title, text, footer, url, imageId }) {
   const { setType } = useContext(CursorContext);
   const [state, setState] = useState(false);
 
-  const modID = (parseInt(imageId.split('-')[1]) + 1) % 3;
+  const modID = (parseInt(imageId.split("-")[1]) + 1) % 3;
 
   console.log();
 
@@ -52,21 +52,21 @@ function CustomTeaser({ image, header, title, text, footer, url, imageId }) {
     <Teaser>
       <CustomCardHeader>{header}</CustomCardHeader>
       <CustomCardImg
-        onMouseEnter={() => setType('expand')}
-        onMouseLeave={() => setType('default')}
+        onMouseEnter={() => setType("expand")}
+        onMouseLeave={() => setType("default")}
         id={imageId}
         onClick={state !== true ? handleExpand : handleShrink}
         src={image}
       />
-      <CardBody className='d-flex flex-column'>
+      <CardBody className="d-flex flex-column">
         <CustomCardTitle>{title}</CustomCardTitle>
         <TextBody>{text}</TextBody>
         <Button
-          onMouseEnter={() => setType('expand')}
-          onMouseLeave={() => setType('default')}
+          onMouseEnter={() => setType("expand")}
+          onMouseLeave={() => setType("default")}
           href={url}
-          target='_blank'
-          className='mt-auto'
+          target="_blank"
+          className="mt-auto"
         >
           Read more &rarr;
         </Button>

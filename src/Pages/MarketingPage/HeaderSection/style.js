@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Container } from 'reactstrap';
+import styled from "styled-components";
+import { Container } from "reactstrap";
 
 export const BackgroundVideo = styled.video`
   position: absolute;
@@ -45,7 +45,7 @@ export const HeaderContainer = styled.div`
   color: white;
   font-size: 4rem;
   line-height: 60px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 `;
 
 export const MainContainer = styled(Container)`

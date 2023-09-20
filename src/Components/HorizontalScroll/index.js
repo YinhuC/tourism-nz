@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import {
   StickyInnerContainer,
   HorizontalTranslateContainer,
   TallOuterContainer,
-} from './style';
+} from "./style";
 
 /*https://sudo.isl.co/translate-vertical-horizontal/*/
 
@@ -21,9 +21,9 @@ const handleDynamicHeight = (ref, setDynamicHeight) => {
   }
 };
 
-export default ({ children }) => {
-  const [dynamicHeight, setDynamicHeight] = useState(null);
-  const [translateX, setTranslateX] = useState(0);
+const HorizontalScroll = ({ children }) => {
+  const [dynamicheight, setDynamicHeight] = useState(null);
+  const [translatex, setTranslateX] = useState(0);
 
   const containerRef = useRef(null);
   const objectRef = useRef(null);
@@ -39,20 +39,22 @@ export default ({ children }) => {
 
   useEffect(() => {
     handleDynamicHeight(objectRef, setDynamicHeight);
-    window.addEventListener('resize', resizeHandler);
-    window.addEventListener('scroll', calculateX);
+    window.addEventListener("resize", resizeHandler);
+    window.addEventListener("scroll", calculateX);
     return function cleanup() {
-      window.removeEventListener('scroll', calculateX);
+      window.removeEventListener("scroll", calculateX);
     };
   }, []);
 
   return (
-    <TallOuterContainer dynamicHeight={dynamicHeight}>
+    <TallOuterContainer dynamicheight={dynamicheight}>
       <StickyInnerContainer ref={containerRef}>
-        <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
+        <HorizontalTranslateContainer translatex={translatex} ref={objectRef}>
           {children}
         </HorizontalTranslateContainer>
       </StickyInnerContainer>
     </TallOuterContainer>
   );
 };
+
+export default HorizontalScroll;

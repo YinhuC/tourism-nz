@@ -1,11 +1,10 @@
 /* Third Party */
 import React, { useContext } from "react";
-import { Container, Row, Col } from "reactstrap";
-import { Button } from "shards-react";
+import { Container, Row, Col, Button } from "reactstrap";
 
 /* Components */
 import { FooterContainer, Copyright, FooterText, FooterLinks } from "./style";
-import CursorContext from "../Cursor/Context/CursorContext";
+import { CursorContext } from "../Cursor/Context/CursorContext";
 
 /* Functions */
 
