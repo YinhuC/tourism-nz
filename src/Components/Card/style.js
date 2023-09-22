@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const CardImage = styled.div`
   width: 100%;
@@ -40,8 +40,8 @@ export const TopContainer = styled.div`
 `;
 
 export const Header = styled.h2`
-  font-family: 'Playfair Display', serif;
-  font-size: 50px;
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
 
   display: flex;
   justify-content: flex-end;
@@ -49,9 +49,9 @@ export const Header = styled.h2`
 `;
 
 export const Subheader = styled.h4`
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-style: italic;
-  font-size: 30px;
+  font-size: 20px;
 
   display: flex;
   justify-content: flex-end;

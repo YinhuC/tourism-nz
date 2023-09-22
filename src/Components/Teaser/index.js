@@ -58,7 +58,7 @@ function CustomTeaser({ image, header, title, text, footer, url, imageId }) {
         onClick={state !== true ? handleExpand : handleShrink}
         src={image}
       />
-      <CardBody className="d-flex flex-column">
+      <CardBody className="d-flex flex-column px-4">
         <CustomCardTitle>{title}</CustomCardTitle>
         <TextBody>{text}</TextBody>
         <Button
@@ -66,7 +66,8 @@ function CustomTeaser({ image, header, title, text, footer, url, imageId }) {
           onMouseLeave={() => setType("default")}
           href={url}
           target="_blank"
-          className="mt-auto"
+          className="mt-auto mb-2"
+          color="primary"
         >
           Read more &rarr;
         </Button>

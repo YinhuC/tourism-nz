@@ -19,19 +19,21 @@ function CovidSection() {
     const split = new SplitText("#disclaimer", {
       type: "lines",
     });
+    let ctx = gsap.context(() => {
+      gsap.from(["#covid-title", split.lines, "#covid-button"], {
+        delay: 0.3,
+        duration: 1,
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power2",
 
-    gsap.from(["#covid-title", split.lines, "#covid-button"], {
-      delay: 0.3,
-      duration: 1,
-      y: 20,
-      opacity: 0,
-      stagger: 0.1,
-      ease: "power2",
-
-      scrollTrigger: {
-        trigger: "#disclaimer",
-      },
+        scrollTrigger: {
+          trigger: "#disclaimer",
+        },
+      });
     });
+    return () => ctx.revert();
   });
 
   return (
@@ -43,7 +45,7 @@ function CovidSection() {
               Before You Go
             </CovidHeader>
             <Alert
-              theme="warning"
+              color="warning"
               style={{ color: "black", fontWeight: "bold", marginTop: "30px" }}
             >
               Alert - Warning
@@ -65,7 +67,7 @@ function CovidSection() {
               href="https://covid19.govt.nz/"
               target="_blank"
               size="lg"
-              theme="warning"
+              color="warning"
               style={{
                 fontWeight: "bold",
                 boxShadow: "2px 2px 10px gray",

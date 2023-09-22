@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CovidContainer = styled.section`
   padding: 200px 10px 0 10px;
@@ -10,7 +10,7 @@ export const CovidContainer = styled.section`
 `;
 
 export const DisclaimerText = styled.p`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.7rem;
   line-height: 2.2rem;
   color: black;
@@ -21,9 +21,8 @@ export const DisclaimerText = styled.p`
 `;
 
 export const CovidHeader = styled.div`
-  font-family: 'Inter', sans-serif;
-  font-size: 2.5rem;
-  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
   font-weight: 400;
   color: black;
   line-height: 2.8rem;

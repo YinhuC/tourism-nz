@@ -1,10 +1,10 @@
 /* Third Party */
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 /* Components */
-import HorizontalScroll from '../../../Components/HorizontalScroll';
+import HorizontalScroll from "../../../Components/HorizontalScroll";
 import {
   BumperSection,
   CardsContainer,
@@ -13,9 +13,9 @@ import {
   Main,
   VerticalContainer,
   BumperText,
-} from './style';
-import CustomCard from '../../../Components/Card';
-import { location, info, arrayImages } from '../../LocationPages/constants';
+} from "./style";
+import CustomCard from "../../../Components/Card";
+import { location, info, arrayImages } from "../../LocationPages/constants";
 
 /* Functions */
 
@@ -27,18 +27,21 @@ export default function SlideSection() {
   const topSlideBumper = useRef(null);
 
   useEffect(() => {
-    gsap.from(topSlideBumper.current, {
-      delay: 0.5,
-      duration: 1,
-      y: 20,
-      opacity: 0,
-      stagger: 0.1,
-      ease: 'power2',
+    let ctx = gsap.context(() => {
+      gsap.from(topSlideBumper.current, {
+        delay: 0.5,
+        duration: 1,
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power2",
 
-      scrollTrigger: {
-        trigger: topSlideBumper.current,
-      },
+        scrollTrigger: {
+          trigger: topSlideBumper.current,
+        },
+      });
     });
+    return () => ctx.revert();
   });
 
   const Cards = React.memo(() =>
@@ -48,7 +51,7 @@ export default function SlideSection() {
         header={location[i]}
         subheader={info[i]}
         key={`card-${i}`}
-        url={'/location/' + location[i].replace(/\s+/g, '-').toLowerCase()}
+        url={"/location/" + location[i].replace(/\s+/g, "-").toLowerCase()}
       />
     ))
   );
@@ -62,7 +65,7 @@ export default function SlideSection() {
             Start Exploring Wherever You Want
           </BumperText>
         </BumperSection>
-        <HorizontalSection className='d-none d-md-flex'>
+        <HorizontalSection className="d-none d-md-flex">
           <HorizontalScroll>
             <CardsContainer>
               <Cards />
@@ -70,9 +73,9 @@ export default function SlideSection() {
           </HorizontalScroll>
         </HorizontalSection>
 
-        <HorizontalSection className='d-flex d-md-none'>
+        <HorizontalSection className="d-flex d-md-none">
           <VerticalContainer>
-            <CardsContainer className='vertical-cards-container flex-column'>
+            <CardsContainer className="vertical-cards-container flex-column">
               <Cards />
             </CardsContainer>
           </VerticalContainer>

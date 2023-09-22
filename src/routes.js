@@ -23,13 +23,16 @@ export function Routing() {
   }, []);
 
   useEffect(() => {
-    gsap.from("#promote-header", {
-      delay: 0.5,
-      duration: 1,
-      y: 20,
-      opacity: 0,
-      ease: "power2",
+    let ctx = gsap.context(() => {
+      gsap.from("#promote-header", {
+        delay: 0.5,
+        duration: 1,
+        y: 20,
+        opacity: 0,
+        ease: "power2",
+      });
     });
+    return () => ctx.revert();
   });
 
   return (

@@ -22,15 +22,18 @@ function HeaderSection() {
   const backgroundColor = "transparent";
 
   useEffect(() => {
-    gsap.from(["#discover-hero", "#begin-journey-hero"], {
-      delay: 0.8,
-      duration: 1,
-      y: 20,
-      opacity: 0,
-      stagger: 0.1,
-      ease: "power2",
+    let ctx = gsap.context(() => {
+      gsap.from(["#discover-hero", "#begin-journey-hero"], {
+        delay: 0.8,
+        duration: 1,
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power2",
+      });
     });
-  });
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section>
@@ -53,10 +56,7 @@ function HeaderSection() {
                   </div>
                 </HeaderContainer>
                 <HeaderContainer className="d-none d-lg-flex flex-column">
-                  <div id="discover-hero">
-                    Discover <br />
-                    New Zealand
-                  </div>
+                  <div id="discover-hero">Discover New Zealand</div>
                   <div id="begin-journey-hero" style={{ fontSize: "2rem" }}>
                     Begin Your Journey
                   </div>

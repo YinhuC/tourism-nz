@@ -1,6 +1,6 @@
 /* Third Party */
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 /* Components */
 import {
@@ -8,7 +8,7 @@ import {
   ImageContainer,
   TopContainer,
   LocationText,
-} from './style';
+} from "./style";
 
 /* Functions */
 
@@ -18,32 +18,35 @@ function LocationPage({ image, locationName, colour }) {
   const imageRef = useRef(null);
 
   useEffect(() => {
-    gsap.from(locationTextRef.current, {
-      delay: 1.5,
-      duration: 1,
-      y: 20,
-      opacity: 0,
-      ease: 'power2',
-      stagger: 1,
-    });
+    let ctx = gsap.context(() => {
+      gsap.from(locationTextRef.current, {
+        delay: 1.5,
+        duration: 1,
+        y: 20,
+        opacity: 0,
+        ease: "power2",
+        stagger: 1,
+      });
 
-    gsap.from(imageRef.current, {
-      delay: 0.5,
-      duration: 1.5,
-      y: '-100vh',
-      opacity: 0,
-      ease: 'power2',
-    });
+      gsap.from(imageRef.current, {
+        delay: 0.5,
+        duration: 1.5,
+        y: "-100vh",
+        opacity: 0,
+        ease: "power2",
+      });
 
-    gsap.from(locationContainerRef.current, {
-      duration: 1.5,
-      x: '-200vh',
-      ease: 'power2',
+      gsap.from(locationContainerRef.current, {
+        duration: 1.5,
+        x: "-200vh",
+        ease: "power2",
+      });
     });
+    return () => ctx.revert();
   });
 
   return (
-    <MainContainer className='flex-column flex-md-row'>
+    <MainContainer className="flex-column flex-md-row">
       <ImageContainer
         ref={imageRef}
         style={{ backgroundImage: `url(${image})` }}
