@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const MainContainer = styled.section`
   /* Full height */
@@ -31,6 +31,6 @@ export const TopContainer = styled.div`
 export const LocationText = styled.div`
   text-transform: uppercase;
   font-size: calc(12px + 3vw);
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: white;
 `;

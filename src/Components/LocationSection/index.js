@@ -45,6 +45,10 @@ function LocationPage({ image, locationName, colour }) {
     return () => ctx.revert();
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <MainContainer className="flex-column flex-md-row">
       <ImageContainer
