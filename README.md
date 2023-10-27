@@ -1,6 +1,8 @@
-# Agile Tasker App
+# Tourism NZ
 
 Welcome to the Promote Tourism NZ! This application shows the beauty of New Zealand using new technologies to create a website similar to those seen on the awwwards.com with smooth transitions and animations.
+
+Check the applicaton out here: https://tourism-nz.onrender.com/
 
 # Prerequisites
 
